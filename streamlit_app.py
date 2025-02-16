@@ -75,7 +75,7 @@ def load_all_sessions():
         user_email = st.session_state.auth.user.email
         records = (
             supabase
-            .table("user_conversations3")
+            .table("user_conversationsimex")
             .select("session_id, chat_name, timestamp")
             .eq("user_email", user_email)
             .order("timestamp", desc=True)
@@ -121,7 +121,7 @@ def load_previous_messages(session_id: str):
 
         records = (
             supabase
-            .table("user_conversations3")
+            .table("user_conversationsimex")
             .select("*")
             .eq("user_email", user_email)
             .eq("session_id", session_id)
