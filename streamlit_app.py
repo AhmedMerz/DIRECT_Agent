@@ -272,7 +272,7 @@ def main():
                                     ai_message = data_list[0].get("output ", "No 'output' key found.")
                                     st.session_state.messages.append({"role": "assistant", "content": ai_message})
                                     with st.chat_message("assistant"):
-                                        st.write(ai_message)
+                                        st.markdown(ai_message)
                                         st.markdown("---")
 
                     except ValueError:
