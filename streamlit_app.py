@@ -274,14 +274,7 @@ def main():
                                     with st.chat_message("assistant"):
                                         st.markdown(ai_message)
                                         st.markdown("---")
-                                        st.markdown("### Related Tutorials:")
-                                        tutorials_container = st.container()
-                                        cols = tutorials_container.columns(2)
-                                        for idx, tutorial in enumerate(data_list[1:]):
-                                            if 'titleSlide' in tutorial and 'Link' in tutorial:
-                                                col = cols[idx % 2]
-                                                with col:
-                                                    st.markdown(f"📚 **[{tutorial['titleSlide']}]({tutorial['Link']})**")
+
                     except ValueError:
                         st.error("Response is not valid JSON.")
                 else:
