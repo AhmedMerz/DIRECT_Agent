@@ -121,7 +121,7 @@ def load_previous_messages(session_id: str):
 
         records = (
             supabase
-            .table("user_conversationsimex")
+            .table("user_conversationsdirect")
             .select("*")
             .eq("user_email", user_email)
             .eq("session_id", session_id)
@@ -179,7 +179,7 @@ def auth_ui():
 # Main
 # -------------------------------------------------------------------
 def main():
-    st.title("CMG IMEX Support Agent 🤖")
+    st.title("DiReCT Support Agent 🤖")
     init_session_state()
 
     if st.session_state.auth is None:
